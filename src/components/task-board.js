@@ -1,40 +1,7 @@
-import {createElement, render} from '../render.js';
+import { AbstractComponent } from "../abstractComponents.js";
 
-
-function createTaskBoardComponentTemplate() { 
-   
-
-  return(
-    
-        `<div class="box">
-             <h2 class="box__title box-backlog">Бэклог</h2>
-           </div>  `   
-
- 
-  )
-       
-     
-      
-}
-
-
-export class TaskBoardComponent {
+export class ListBoardComponent extends AbstractComponent {
   getTemplate() {
-    return createTaskBoardComponentTemplate();
-  }
-
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
-
-
-    return this.element;
-  }
-
-
-  removeElement() {
-    this.element = null;
+    return `<section class="board-app__list"></section>`;
   }
 }
